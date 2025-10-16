@@ -1,0 +1,47 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  17. BRAND CSS START
+/*----------------------------------------*/
+
+.brand{
+    &__item{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 50%;
+            @include transform(translateY(-50%));
+            width: 1px;
+            height: 80px;
+            background: $border-2;
+        }
+        & img{
+            display: inline-block !important;
+            width: inherit !important;
+            filter: grayscale(100%);
+        }
+        &:hover{
+            & img{
+                filter: grayscale(0);
+            }
+        }
+        &-4{
+            & img{
+                display: inline-block !important;
+                width: inherit !important;
+            }
+        }
+        &-7{
+            & img{
+                filter: grayscale(100%);
+            }
+            &:hover{
+                & img{
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,869 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  00. FOOTER CSS START
+/*----------------------------------------*/
+
+.footer{
+    &__mr-40{
+        margin-right: 40px;
+        @media #{$xs}{
+            margin-right: 0;
+        }
+    }
+    &__ml--20{
+        margin-left: -20px;
+        @media #{$lg, $md, $sm, $xs}{
+            margin-left: 0;
+        }
+    }
+    &__ml--40{
+        margin-left: -40px;
+        @media #{$lg, $md, $sm, $xs}{
+            margin-left: 0;
+        }
+    }
+    &__ml-95{
+        margin-left: 95px;
+        @media #{$sm, $xs}{
+            margin-left: 0;
+        }
+    }
+    &__ml-65{
+        margin-left: 65px;
+        @media #{$md, $sm, $xs}{
+            margin-left: 0;
+        }
+    }
+    &__ml-55{
+        margin-left: 55px;
+        @media #{$md, $sm, $xs}{
+            margin-left: 0;
+        }
+    }
+    &__ml-40{
+        margin-left: 40px;
+        @media #{$xl, $lg, $md, $sm, $xs}{
+            margin-left: 0;
+        }
+    }
+    &__widget{
+        &-padding{
+            padding-top: 100px;
+            padding-bottom: 55px;
+            &-2{
+                padding-bottom: 75px;
+
+                @media #{$xs}{
+                    padding-top: 40px;
+                    padding-bottom: 0;
+                }
+            }
+        }
+        &-title{
+            font-size: 20px;
+            color: $white;
+            font-weight: 400;
+            margin-bottom: 45px;
+            &-3{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            &-8{
+                font-weight: 600;
+                color: $black;
+            }
+            &-11{
+                font-weight: 700;
+                color: $white;
+            }
+        }
+        &-content{}
+    }
+    &__info{
+        &-padding{
+            padding: 100px 40px 55px 40px;
+            @media #{$sm}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            &-2{
+                padding: 100px 0 55px;
+            }
+        }
+        & p{
+            color: $white;
+            margin-bottom: 45px;
+            font-family: $lato;
+        }
+        &-3{
+            & p{
+                margin-bottom: 27px;
+                color: $d-text-2;
+                font-family: $rubik;
+            }
+        }
+        &-4{
+            & p{
+                margin-bottom: 27px;
+                color: $d-text-8;
+                font-family: $rubik;
+            }
+        }
+        &-7{
+            & p{
+                color: $d-text-13;
+                font-family: $rubik;
+            }
+        }
+        &-8{
+            & p{
+                color: $d-text-1;
+            }
+        }
+        &-11{
+            & p{
+                font-size: 16px;
+                line-height: 32px;
+                color: $d-text-16;
+                margin-bottom: 0;
+                padding: 0 115px;
+                @media #{$xl}{
+                    padding-left: 60px;
+                    padding-right: 60px;
+                }
+                @media #{$lg}{
+                    padding: 0;
+                    margin-left: 135px;
+                }
+                @media #{$md, $sm, $xs}{
+                   padding: 0;
+                   margin: 20px 0;
+                }
+            }
+        }
+        &-wrapper-11{
+            padding: 20px 80px;
+
+            @media #{$xl}{
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            @media #{$lg}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @media #{$xs}{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    &__social{
+        & ul{
+            & li{
+                display: inline-block;
+                &:not(:last-child){
+                    margin-right: 7px;
+                }
+                & a{
+                    
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 42px;
+                    text-align: center;
+                    background: $white;
+                    color: $d-text-3;
+                    font-size: 14px;
+                    @include border-radius(50%);
+                    &:hover{
+                        color: $d-blue;
+                    }
+                }
+            }
+        }
+        &-2{
+            & ul{
+                & li{
+                    & a{
+                        &:hover{
+                            color: $d-yellow-2;
+                        }
+                    }
+                }
+            }
+        }
+        &-3{
+            & ul{
+                & li{
+                    & a{
+                        &:hover{
+                            color: $d-orange;
+                        }
+                    }
+                }
+            }
+        }
+        &-4{
+            & ul{
+                & li{
+                    & a{
+                        &:hover{
+                            color: $d-red;
+                        }
+                    }
+                }
+            }
+        }
+        &-7{
+            & ul{
+                & li{
+                    & a{
+                        &:hover{
+                            background: $d-blue-3;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        &-8{
+            & ul{
+                & li{
+                    & a{
+                        background: $grey-8;
+                        color: $d-text-3;
+                        &:hover{
+                            background: $d-yellow-4;
+                            color: $black-2;
+                        }
+                    }
+                }
+            }
+        }
+        &-9{
+            & ul{
+                & li{
+                    & a{
+                        &:hover{
+                            color: $d-blue-4;
+                        }
+                    }
+                }
+            }
+        }
+        &-11{
+            & ul{
+                & li{
+                    &:not(:last-child){
+                        margin-right: 5px;
+                    }
+                    & a{
+                        width: 50px;
+                        height: 50px;
+                        line-height: 52px;
+                        background: #F1F1F1;
+                        color: #888888;
+                        @include border-radius(0);
+                        &:hover{
+                            color: $white;
+                            background: $black-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__link{
+        & ul{
+            & li{
+                &:not(:last-child){
+                    margin-bottom: 7px;
+                }
+                & a{
+                    font-size: 16px;
+                    color: $d-text-2;
+                    font-family: $lato;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-2{
+            & ul{
+                & li{
+                    & a{
+                        &:hover{
+                            color: $d-yellow-2;
+                        }
+                    }
+                }
+            }
+        }
+        &-3{
+            & ul{
+                & li{
+                    & a{
+                        color: $d-text-2;
+                        font-family: $rubik;
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        &-4{
+            & ul{
+                & li{
+                    & a{
+                        color: $d-text-8;
+                        font-family: $rubik;
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        &-7{
+            & ul{
+                & li{
+                    & a{
+                        color: $d-text-13;
+                        font-family: $rubik;
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        &-8{
+            & ul{
+                & li{
+                    & a{
+                        color: $d-text-1;
+                        font-family: $rubik;
+                        &:hover{
+                            color: $black-2;
+                        }
+                    }
+                }
+            }
+        }
+        &-11{
+            & ul{
+                & li{
+                    & a{
+                        color: $d-text-17;
+                        font-family: $rubik;
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__subscribe{
+        &-3{
+            padding-top: 8px;
+        }
+        &-input{
+            position: relative;
+            & input{
+                width: 100%;
+                height: 70px;
+                line-height: 70px;
+                padding-left: 45px;
+                padding-right: 75px;
+                &::placeholder{
+                    color: $d-text-2;
+                }
+            }
+            & i{
+                position: absolute;
+                top: 52%;
+                left: 15px;
+                @include transform(translateY(-50%));
+                font-size: 16px;
+                color: $d-text-2;
+            }
+            &-3{
+                & input{
+                    font-family: $rubik;
+                    @include border-radius(5px);
+                    border: none;
+                }
+            }
+            &-6{
+                & input{
+                    font-family: $rubik;
+                    @include border-radius(0);
+                    border: none;
+                }
+            }
+            &-11{
+                & input{
+                    padding-right: 20px;
+                }
+            }
+        }
+        &-wrapper{
+            position: relative;
+            & button{
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                text-align: center;
+                font-size: 20px;
+                background: $d-blue;
+                color: $white;
+                &:hover{
+                    background: $d-blue-dark;
+                }
+            }
+            &-2{
+                & button{
+                    background: $d-yellow-2;
+                }
+            }
+            &-3{
+                & button{
+                    background: $d-orange;
+                    @include border-radius(0 5px 5px 0);
+                }
+            }
+            &-4{
+                & button{
+                    background: $d-red;
+                    @include border-radius(0 5px 5px 0);
+                }
+            }
+            &-5{
+                & button{
+                    background: linear-gradient(#fea307 0%, #fe5824 100%);
+                    @include border-radius(0 5px 5px 0);
+                    &:hover{
+                        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(254,163,7,1) 0%, rgba(254,88,36,1) 100%);
+                    }
+                }
+            }
+            &-6{
+                & button{
+                    background: $d-red;
+                    @include border-radius(0);
+                }
+            }
+            &-9{
+                & button{
+                    background: $d-blue-4;
+                    @include border-radius(0 5px 5px 0);
+                }
+            }
+            &-11{
+                & button{
+                    margin-top: 20px;
+                    position: relative;
+                    background: $d-yellow-6;
+                    @include border-radius(0);
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-family: $popins;
+                    width: 100%;
+                    height: 60px;
+                    line-height: 56px;
+                    margin-bottom: 25px;
+                    & i{
+                        margin-left: 10px;
+                    }
+                    &:hover{
+                        background: $black-2;
+                    }
+                }
+            }
+        }
+    }
+    &__bottom{
+        &-wrapper{
+            padding: 25px 40px;
+            @media #{$xs}{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        &-3{
+            padding: 15px 0;
+            border-top: 1px solid $border-7;
+        }
+        &-4{
+            padding: 15px 0;
+            border-top: 1px solid $border-8;
+        }
+        &-7{
+            border-color: $black-10;
+        }
+        &-11{
+            margin-top: -55px;
+            padding-top: 85px;
+            padding-bottom: 25px;
+        }
+        &-link{
+            & ul{
+                & li{
+                    display: inline-block;
+                    position: relative;
+                    &:not(:first-child){
+                        padding-left: 25px;
+                        margin-left: 25px;
+                        @media #{$md}{
+                            margin-left: 10px;
+                            padding-left: 10px;
+                        }
+                        @media #{$xs}{
+                            margin-left: 0;
+                            padding-left: 0;
+                        }
+                        &::after{
+                            position: absolute;
+                            content: '';
+                            left: 0;
+                            top: 50%;
+                            @include transform(translateY(-50%));
+                            width: 1px;
+                            height: 20px;
+                            background: $border-8;
+                            @media #{$xs}{
+                                display: none;
+                            }
+                        }
+                    }
+                    &:not(:last-child){
+                        @media #{$xs}{
+                            padding-right: 10px;
+                            margin-right: 10px;
+                        }
+                    }
+                    & a{
+                        color: $d-text-2;
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+            &-4{
+                & ul{
+                    & li{
+                        & a{
+                            color: $d-text-8;
+                            &:hover{
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+            &-11{
+                & ul{
+                    & li{
+                        @media #{$xs}{
+                            display: block;
+                            margin-bottom: 5px;
+                        }
+                        &:not(:first-child){
+                            margin-left: 5px;
+                            padding-left: 5px;
+                            @media #{$xs}{
+                                padding-left: 0;
+                                padding-right: 0;
+                            }
+                            &::after{
+                                background: #FFDCB4;
+                            }
+                        }
+                        & a{
+                            color: $white;
+                            &:hover{
+                                color: $black-2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__copyright{
+        @media #{$md, $sm, $xs}{
+            margin-bottom: 50px;
+         }
+        & p{
+            font-size: 16px;
+            margin-bottom: 0;
+            color: $white;
+            font-family: $lato;
+            & a{
+                color: $d-blue;
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+        &-2{
+            & p{
+                & a{
+                    color: $d-yellow-2;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-3{
+            @media #{$md}{
+                margin-bottom: 0;
+            }
+            @media #{$sm, $xs}{
+                margin-bottom: 10px;
+            }
+            & p{
+                color: $white;
+                & a{
+                    color: $d-orange;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-4{
+            @media #{$md}{
+                margin-bottom: 0;
+            }
+            @media #{$sm, $xs}{
+                margin-bottom: 10px;
+            }
+            & p{
+                color: $white;
+                & a{
+                    color: $d-red;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-7{
+            & p{
+                color: $white;
+                & a{
+                    color: $white;
+                    &:hover{
+                        color: $d-pink;
+                    }
+                }
+            }
+        }
+        &-8{
+            & p{
+                color: $white;
+                & a{
+                    color: $white;
+                    &:hover{
+                        color: $d-yellow-4;
+                    }
+                }
+            }
+        }
+        &-9{
+            & p{
+                & a{
+                    color:$d-blue-4;
+                    &:hover{
+                        color: $white ;
+                    }
+                }
+            }
+        }
+        &-11{
+            @media #{$md, $sm, $xs}{
+                margin-bottom: 0;
+            }
+            & p{
+                font-family: $rubik;
+                color:$white;
+                & a{
+                    color: $white;
+                    &:hover{
+                        color: $black-2;
+                    }
+                }
+            }
+        }
+    }
+    &__call{
+        @media #{$xl}{
+            padding-left: 0;
+        }
+        @media #{$md}{
+           margin-bottom: 50px;
+        }
+        @media #{$sm, $xs}{
+           margin-bottom: 50px;
+           padding-left: 0;
+        }
+        &-icon{
+            & i{
+                font-size: 44px;
+                color: $d-blue;
+            }
+        }
+        &-content{
+            & p{
+                font-size: 15px;
+                color: $d-text-2;
+                margin-bottom: 6px;
+                @media #{$xl}{
+                    font-size: 13px;
+                }
+            }
+            & h5{
+                color: $white;
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+        }
+        &-2{
+            & i{
+                color: $d-yellow-2;
+            }
+        }
+        &-6{
+            & i{
+                color: $d-red;
+            }
+        }
+    }
+    &__contact{
+        @media #{$xl}{
+            padding-left: 35px;
+        }
+        @media #{$lg, $md, $sm, $xs}{
+            padding-left: 0;
+        }
+        & h3{
+            font-size: 20px;
+            color: $white;
+        }
+        & ul{
+            & li{
+                &:not(:last-child){
+                    @media #{$xs}{
+                        margin-bottom: 10px;
+                    }
+                }
+                & p{
+                    font-size: 16px;
+                    color: $d-text-2;
+                    width: 20%;
+                    display: inline-block;
+                    margin-bottom: 0;
+                    @media #{$xs}{
+                        display: block;
+                        width: inherit;
+                    }
+                    & span{
+                        float: right;
+                        @media #{$xs}{
+                            float: none;
+                        }
+                    }
+                }
+                & a{
+                    margin-left: 3px;
+                    font-size: 16px;
+                    color: $d-text-2;
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-2{
+            & ul{
+                & li{
+                    &:not(:last-child){
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+        }
+        &-icon{
+            margin-right: 15px;
+            & i{
+                font-size: 22px;
+                line-height: 28px;
+                display: inline-block;
+                width: 22px;
+                color: $d-yellow-6;
+            }
+        }
+        &-content{
+            & a{
+                display: block;
+                font-size: 16px;
+                line-height: 22px;
+                color: $d-text-17;
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+    }
+    &__line{
+        position: relative;
+        &::after{
+            @extend %theme-after-before;
+            right: 15px;
+            top: 50%;
+            @include transform(translateY(-50%));
+            width: 1px;
+            height: 100px;
+            background: $border-3;
+            
+            @media #{$lg, $md}{
+                height: 70px;
+            }
+            @media #{$sm, $xs}{
+                display: none;
+            }
+        }
+        &-2{
+            &::after{
+                right: -50px;
+                @media #{$lg, $md}{
+                    display: none;
+                }
+            }
+        }
+    }
+    &__opening{
+        & p{
+            font-size: 16px;
+            color: $d-text-17;
+            & span{
+                color: $white;
+                font-weight: 700;
+            }
+        }
+    }
+}

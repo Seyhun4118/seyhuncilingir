@@ -1,0 +1,251 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  24. PRICE CSS START
+/*----------------------------------------*/
+
+.price{
+    &__head{
+        padding: 40px 10px;
+        @include border-radius(10px 10px 0 0);
+        & span{
+            font-size: 16px;
+            font-weight: 500;
+            color: $white;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+        & h3{
+            color: $white;
+            font-size: 34px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+    }
+    &__content{
+        & ul{
+            & li{
+                padding: 17px 5px;
+                background: $grey-11;
+                font-size: 16px;
+                color: $black-2;
+                &:nth-child(2n+1){
+                    background: $grey-10;
+                }
+                &:hover{
+                    background: $black-2;
+                    color: $white;
+                }
+            }
+        }
+    }
+    &__features{
+        &-list{
+            & ul{
+                & li{
+                    padding: 17px 5px;
+                    background: $grey-11;
+                    font-size: 16px;
+                    color: $black-2;
+                    &:nth-child(2n+1){
+                        background: $grey-10;
+                    }
+                    &:hover{
+                        background: $black-2;
+                        color: $white;
+                        & i{
+                            color: $white;
+                        }
+                    }
+                    & i{
+                        margin-right: 10px;
+                    }
+                    &.yes{
+                        & i{
+                            color: $d-blue-4;
+                        }
+                    }
+                    &.no{
+                        & i{
+                            color: $d-red;
+                        }
+                    }
+                }
+            }
+            &-10{
+                & ul{
+                    & li{
+                        font-size: 16px;
+                        color: $d-text-1;
+                        @include flexbox();
+                        align-items: center;
+                        &:not(:last-child){
+                            margin-bottom: 10px;
+                        }
+                        & i{
+                            display: inline-block;
+                            width: 16px;
+                            height: 16px;
+                            line-height: 16px;
+                            text-align: center;
+                            font-size: 8px;
+                            background: $d-green-6;
+                            color: $white;
+                            @include border-radius(50%);
+                            margin-right: 15px;
+                        }
+                        &:hover{
+                            color: $black-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__top{
+        @include border-radius(10px 10px 0 0);
+        background: $d-blue-4;
+        padding: 30px 0;
+
+        &.green-bg{
+            background: $d-green-5;
+        }
+        &.purple-bg{
+            background: $d-purple-3;
+        }
+        &.orange-bg{
+            background: $d-orange-2;
+        }
+        &  h4{
+            font-size: 18px;
+            text-transform: uppercase;
+            color: $white;
+            margin-bottom: 0;
+        }
+    }
+    &__tag{
+        background: $black-2;
+        padding: 14px 0;
+        & h6{
+            font-size: 16px;
+            color: $d-text-15;
+            font-family: $rubik;
+            font-weight: 400;
+            margin-bottom: 0;
+            & span{
+                font-size: 30px;
+                font-weight: 600;
+                color: $white;
+            }
+        }
+    }
+    &__btn{
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        @include border-radius(0 0 10px 10px);
+        text-transform: uppercase;
+        font-size: 14px;
+        color: $white;
+        background: $black-2;
+        width: 100%;
+        font-weight: 500;
+        &:hover{
+            background: $d-blue-4;
+            
+        }
+    }
+    &__tab{
+        & .nav-tabs{
+            border: none;
+            width: fit-content;
+            @include border-radius(3px);
+            border: 1px solid $d-blue-4;
+            & .nav-item{
+               
+                & .nav-link{
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    font-size: 14px;
+                    color: $black-2;
+                    @include border-radius(0);
+                    padding: 0 20px;
+                    background: $white;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    &.active,
+                    &:hover{
+                        color: $white;
+                        background: $d-blue-4;
+                    }
+                }
+            }
+        }
+    }
+    &__icon{
+        &-2{
+            & span{
+                display: inline-block;
+                width: 78px;
+                height: 78px;
+                line-height: 78px;
+                text-align: center;
+                background: $d-yellow-5;
+                @include border-radius(50%);
+                &.blue-bg{
+                    background: $d-blue-8;
+                }
+                &.red-bg{
+                    background: $d-red-2;
+                }
+                &.green-bg{
+                    background: $d-green-7;
+                }
+            }
+        }
+    }
+    &__info{
+        & h4{
+            font-size: 14px;
+            font-weight: 500;
+            color: $black-2;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-family: $rubik;
+        }
+        & h6{
+            font-size: 16px;
+            color: $d-text-1;
+            font-weight: 400;
+            font-family: $rubik;
+            & span{
+                font-size: 30px;
+                font-weight: 700;
+                color: $d-blue-4;
+                font-family: $popins;
+            }
+        }
+    }
+    &__item{
+        &-2{
+            padding: 30px 30px;
+            border: 1px solid $d-blue-4;
+            @include box-shadow(0px 30px 50px rgba(19, 57, 133, 0.06));
+            @include border-radius(10px);
+            & .price-btn{
+                height: 50px;
+                line-height: 46px;
+                padding: 0 35px;
+                &:hover{
+                    background: $d-blue-4;
+                    border-color: $d-blue-4;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,135 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  04. PACKAGE CSS START
+/*----------------------------------------*/
+
+
+.package{
+    &__item{
+        &:hover{
+            & .package__thumb{
+                & img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    }
+    &__title{
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 15px;
+        & a{
+            &:hover{
+                color: $d-blue;
+            }
+        }
+    }
+    &__content{
+        border-left: 1px solid $border-2;
+        border-right: 1px solid $border-2;
+        padding: 40px 30px;
+        padding-bottom: 15px;
+
+        @media #{$xl}{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    &__price{
+        position: absolute;
+        top: 0;
+        left: 30px;
+        @include transform(translateY(-50%));
+        @media #{$xl}{
+            left: 10px;
+        }
+        & span{
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 700;
+            color: $white;
+            background: $d-blue;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+    }
+    &__time{
+        margin-bottom: 13px;
+        & span{
+            font-size: 14px;
+            font-weight: 700;
+            & i{
+                color: $d-blue;
+                margin-right: 7px;
+            }
+        }
+    }
+    &__rating{
+        & ul{
+            & li{
+                display: inline-block;
+                & a{
+                    font-size: 14px;
+                    color: $d-yellow;
+                }
+            }
+        }
+    }
+    &__bottom{
+        &-wrapper{
+            border: 1px solid $border-2;
+            border-right: none;
+        }
+        & a{
+            display: inline-block;
+            border-right: 1px solid $border-2;
+            height: 38px;
+            line-height: 38px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 18px;
+            &::after{
+                @extend %theme-after-before;
+                left: auto;
+                right: 0;
+                width: 0;
+                height: 100%;
+                background: $d-blue;
+                z-index: -1;
+            }
+            &:hover{
+                color: $white;
+                &::after{
+                    width: 100%;
+                    left: 0;
+                    right: auto;
+                }
+            }
+        }
+    }
+    &__slider{
+        padding-bottom: 70px;
+        & .owl-dots{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            @include transform(translateX(-50%));
+            @include flexbox();
+            & .owl-dot{
+                width: 23px;
+                height: 6px;
+                background: $white;
+                border: 1px solid $d-blue;
+                @include border-radius(3px);
+                margin: 0 5px;
+                &.active{
+                    background: $d-blue;
+                }
+            }
+        }
+    }
+}

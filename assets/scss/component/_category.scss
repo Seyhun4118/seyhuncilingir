@@ -1,0 +1,68 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  20. CATEGORY CSS START
+/*----------------------------------------*/
+
+.category{
+    &__item{
+        padding: 35px 40px;
+        @include border-radius(10px);
+
+        @media #{$xl}{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &:hover{
+            background: $d-blue-3;
+            box-shadow: 0px 20px 20px rgba(31, 88, 152, 0.15);
+
+            & .category__title,
+            & .category__icon i,
+            & .category__content span{
+                color: $white;
+            }
+        }
+        &-2{
+            &:hover{
+                & .category__thumb-2 img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    }
+    &__title{
+        font-size: 20px;
+        font-weight: 600;
+        color: $black-2;
+        margin-bottom: 0;
+        &-2{
+            font-size: 16px;
+            font-weight: 500;
+
+        }
+    }
+    &__icon{
+        & i{
+            font-size: 45px;
+            color: $d-blue-3;
+        }
+    }
+    &__content{
+        &-2{
+            padding-top: 8px;
+        }
+    }
+    &__more{
+        & .d-btn-edu{
+            height: 50px;
+            line-height: 46px;
+            padding: 0 30px;
+        }
+    }
+    &__count{
+        & span{
+            font-size: 14px;
+        }
+    }
+}

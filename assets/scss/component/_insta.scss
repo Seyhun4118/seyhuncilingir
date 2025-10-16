@@ -1,0 +1,24 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  12. INSTAGRAM CSS START
+/*----------------------------------------*/
+
+.insta{
+    &__mt{
+        @media #{$lg}{
+            margin-top: 50px;
+        }
+    }
+    &__thumb{
+        overflow: hidden;
+        & img{
+            width: 100%;
+        }
+        &:hover{
+            & img{
+                @include transform(scale(1.1));
+            }
+        }
+    }
+}

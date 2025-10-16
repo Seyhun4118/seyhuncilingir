@@ -1,0 +1,558 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  16. PORTFOLIO CSS START
+/*----------------------------------------*/
+
+.portfolio{
+    &__item{
+        @media #{$lg, $md, $sm, $xs}{
+            margin-bottom: 30px;
+        }
+        &:hover{
+            & .portfolio__content{
+                bottom: 30px;
+                visibility: visible;
+                opacity: 1;
+            }
+            & .portfolio__thumb{
+                & a{
+                    &::after{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        &-5{
+            padding-bottom: 135px;
+            & .portfolio-link-btn{
+                position: relative;
+                display: inline-block;
+                height: 30px;
+                line-height: 28px;
+                text-align: center;
+                padding: 0 10px;
+                font-size: 14px;
+                font-family: $rubik;
+                font-weight: 500;
+                color: $d-orange;
+                text-transform: capitalize;
+                border: 1px solid $d-orange;
+                @include border-radius(3px);
+                overflow: hidden;
+                & span{
+                    text-transform: capitalize;
+                    position: absolute;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                    right: -10px;
+                    visibility: hidden;
+                    opacity: 0;
+                    line-height: 1;
+                    width: 100%;
+                }
+                &:hover{
+                    padding-right: 85px;
+
+                    & span{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:hover{
+                & .portfolio__thumb-5 img{
+                    @include transform(scale(1.1));
+                }
+                & .portfolio__content-5{
+                    @include box-shadow(0px 20px 20px rgba(71, 112, 183, 0.04));
+                }
+            }
+        }
+        &-11{
+            &:hover{
+                & .portfolio__content-11{
+                    visibility: visible;
+                    opacity: 1;
+                    bottom: 20px;
+                }
+                & .portfolio__thumb-11 img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    }
+    &__content{
+        position: relative;
+        padding: 30px 30px;
+        background: $white;
+        @include border-radius(5px);
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+        bottom: 0;
+        width: 65%;
+        visibility: hidden;
+        opacity: 0;
+
+        @media #{$xl, $xs}{
+            width: 90%;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 50%;
+            @include transform(translate(-50%, -50%));
+            width: 4px;
+            height: 98px;
+            background: $d-orange;
+            @include border-radius(4px);
+        }
+        & span{
+            font-size: 14px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        & .link-btn-2{
+            text-transform: uppercase;
+            color: $d-orange;
+            font-weight: 500;
+            font-size: 14px;
+            &:hover{
+                color: $black-4;
+            }
+        }
+        &-5{
+            position: absolute;
+            bottom: 17px;
+            left: 30px;
+            right: 30px;
+            padding: 20px 30px;
+            @include border-radius(3px);
+            z-index: 1;
+            @include transition(.3s);
+            
+            @media #{$xl}{
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            @media #{$lg}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @media #{$md}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+        &-11{
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+            right: 20px;
+            padding: 10px 30px;
+            padding-right: 90px;
+            visibility: hidden;
+            opacity: 0;
+            & .tag{
+                font-size: 14px;
+                color: $d-text-16;
+                display: inline-block;
+            }
+            & p{
+                font-size: 14px;
+                color: $black-2;
+                margin-bottom: 0;
+                & span{
+                    color: $d-text-16;
+                }
+            }
+            & .portfolio-link-btn{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 80px;
+                height: 100%;
+                line-height: 1;
+                background: $d-yellow-6;
+                color: $white;
+                font-size: 24px;
+                text-align: center;
+                @include flexbox();
+                justify-content: center;
+                align-items: center;
+
+                &::after{
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                    width: 0; 
+                    height: 0; 
+                    border-top: 7px solid transparent;
+                    border-bottom: 7px solid transparent;
+                    border-left: 7px solid $white;
+                }
+                &:hover{
+                    background: $black-2;
+                }
+            }
+        }
+        &-12{
+            padding: 15px 20px 20px;
+            padding-right: 90px;
+            @include border-radius(3px);
+            & .tag{
+                text-transform: uppercase;
+                color: $d-orange;
+            }
+            & p{
+                text-transform: uppercase;
+                color: $d-text-16;
+                & span{
+                    color: $black-2;
+                }
+            }
+            & .portfolio-link-btn-2{
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                @include transform(translateY(-50%));
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                line-height: 56px;
+                text-align: center;
+                color: $d-text-1;
+                border: 2px solid #E3E6EE;
+                @include border-radius(50%);
+                font-size: 18px;
+                &:hover{
+                    background: $d-orange;
+                    border-color: $d-orange;
+                    color: $white;
+                }
+            }
+        }
+    }
+    &__title{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: $black-4;
+
+        @media #{$xl}{
+            font-size: 20px;
+        }
+        & a{
+            &:hover{
+                color: $d-orange;
+            }
+        }
+        &-5{
+            font-size: 18px;
+            font-weight: 600;
+            color: $black-2;
+            margin-bottom: 15px;
+            & a{
+                &:hover{
+                    color: $d-orange;
+                }
+            }
+        }
+        &-11{
+            font-size: 20px;
+            font-weight: 600;
+            color: $black-2;
+            margin-bottom: 2px;
+            & a{
+                &:hover{
+                    color: $d-yellow-6;
+                }
+            }
+        }
+    }
+    &__thumb{
+        & a{
+            position: relative;
+            display: block;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(#000853 0%, rgba(0, 2, 17, 0) 100%); 
+                visibility: hidden;
+                opacity: 0;
+                @include transform(rotate(180deg));
+            }
+        }
+        &-11{
+            @include border-radius(15px);
+        }
+        &-12{
+            @include border-radius(0);
+        }
+    }
+    &__more{
+        @media #{$sm, $xs}{
+            margin-bottom: 40px;
+        }
+    }
+    &__meta{
+        &-5{
+            & .tag{
+                font-size: 14px;
+                font-weight: 500;
+                color: $d-blue-dark-4;
+                display: inline-block;
+                text-transform: uppercase;
+            }
+            & span{
+                @media #{$lg}{
+                    display: block;
+                }
+                @media #{$xs}{
+                    display: block;
+                }
+                &:not(:last-child){
+                    margin-right: 30px;
+                }
+                & i{
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    &__tab{
+        &-btn{
+            & .nav-tabs{
+                border: 0;
+                margin: 0;
+                & .nav-item{
+                    width: calc(25% - 30px);
+                    @media #{$md, $sm}{
+                        width: 45%;
+                        margin-bottom: 30px;
+                    }
+                    @media #{$sm}{
+                        width: 43%;
+                        margin-bottom: 30px;
+                    }
+                    @media #{$xs}{
+                        width: 100%;
+                        margin-bottom: 30px;
+                    }
+                    &:not(:last-child){
+                        margin-right: 30px;
+                        @media #{$xs}{
+                            margin-right: 0;
+                        }
+                    }
+                    &:last-child{
+                        width: 25%;
+                        @media #{$md, $sm}{
+                            width: 45%;
+                        }
+                        @media #{$sm}{
+                            width: 43%;
+                        }
+                        @media #{$xs}{
+                            width: 100%;
+                        }
+                    }
+                    & .nav-link{
+                        width: 100%;
+                        border: 0;
+                        margin: 0;
+                        padding: 25px 20px;
+                        font-family: $popins;
+                        font-weight: 600;
+                        font-size: 20px;
+                        color: $black-2;
+                        background: rgba($color: $d-blue-2, $alpha: .1);
+                        @include flexbox();
+                        align-items: center;
+                        justify-content: center;
+                        @include border-radius(5px);
+
+                        @media #{$xl}{
+                            font-size: 18px;
+                        }
+                        @media #{$lg}{
+                            font-size: 16px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                        }
+
+                        & i{
+                            font-size: 35px;
+                            margin-right: 10px;
+                            color: $d-blue-2;
+                            @media #{$lg}{
+                                font-size: 24px;
+                            }
+                        }
+                        &.active,
+                        &:hover{
+                            background: $d-blue-2;
+                            color: $white;
+                            @include box-shadow(0px 30px 50px 0px rgba(1, 11, 60, 0.08));
+                            & i{
+                                color: $white;
+                            }
+                        }
+                        &.orange-bg{
+                            background: rgba($color: $d-orange, $alpha: .1);
+                            & i{
+                                color: $d-orange;
+                            }
+                            &.active,
+                            &:hover{
+                                background: $d-orange;
+                                color: $white;
+                                & i{
+                                    color: $white;
+                                }
+                            }
+                        }
+                        &.green-bg{
+                            background: rgba($color: $d-green, $alpha: .1);
+                            & i{
+                                color: $d-green;
+                            }
+                            &.active,
+                            &:hover{
+                                background: $d-green;
+                                color: $white;
+                                & i{
+                                    color: $white;
+                                }
+                            }
+                        }
+                        &.brown-bg{
+                            background: rgba($color: $d-brown, $alpha: .1);
+                            & i{
+                                color: $d-brown;
+                            }
+                            &.active,
+                            &:hover{
+                                background: $d-brown;
+                                color: $white;
+                                & i{
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__shape{
+        &-1{
+            position: absolute;
+            bottom: 180px;
+            left: 0;
+            z-index: -1;
+        }
+        &-2{
+            position: absolute;
+            top: 21%;
+            left: 26%;
+            z-index: -1;
+
+            @media #{$md}{
+                top: 5%;
+            }
+            @media #{$xs}{
+                top: 2%;
+            }
+        }
+    }
+    &__menu{
+        & button{
+            font-size: 18px;
+            color: $d-text-16;
+            margin: 0 20px;
+            text-transform: capitalize;
+
+            @media #{$sm}{
+                margin: 0 10px;
+            }
+            @media #{$xs}{
+                margin: 0 5px;
+            }
+            &.active{
+                color: $d-yellow-6;
+            }
+        }
+    }
+    &__text{
+        & h3{
+            font-size: 36px;
+            color: $black-2;
+            margin-bottom: 18px;
+        }
+        & p{
+
+        }
+    }
+    &__details{
+        &-features{
+            padding: 0 30px;
+
+            @media #{$sm}{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &.border-right{
+                position: relative;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    right: -10px;
+                    top: 0;
+                    height: 100%;
+                    width: 1px;
+                    background: #EFF0F3;
+                }
+            }
+            & .portfolio-features-icon{}
+            & .portfolio-features-text{
+                & h3{
+                    font-size: 20px;
+                    color: $black-2;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+    &__info{
+        padding: 40px 40px;
+
+        &-content{
+            &  h5{
+                font-size: 18px;
+                font-weight: 600;
+                color: $black-2;
+                margin-bottom: 5px;
+            }
+            & p{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__widget{
+        @media #{$md, $sm, $xs}{
+            margin-top: 50px;
+        }
+    }
+}

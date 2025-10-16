@@ -1,0 +1,42 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  07. DESTINATION CSS START
+/*----------------------------------------*/
+
+.destination{
+    &__item{
+        &::after{
+            @extend %theme-after-before;
+            left: 0;
+            bottom: -20%;
+            width: 100%;
+            height: 100%;
+            background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(21,27,41,1) 0%, rgba(0,212,255,0) 54%);
+            background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(21,27,41,1) 0%, rgba(0,212,255,0) 54%);
+            background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(21,27,41,1) 0%, rgba(0,212,255,0) 54%);
+        }
+        &:hover{
+            & .destination__thumb{
+                & img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    }
+    &__title{
+        font-size: 22px;
+        color: $white;
+        margin-bottom: 0;
+    }
+    &__content{
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        z-index: 1;
+        & span{
+            font-size: 14px;
+            color: $white;
+        }
+    }
+}

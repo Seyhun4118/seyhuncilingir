@@ -1,0 +1,181 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  08. FAQ CSS START
+/*----------------------------------------*/
+
+.faq{
+    &__accordion{
+        &-border{
+            border: 1px solid $border-2;
+        }
+        & .accordion-item{
+            &:not(:last-child){
+                border-bottom: 1px solid $border-2;
+            }
+        }
+        & .accordion-button{
+            font-size: 16px;
+            font-weight: 700;
+            color: $black;
+            border: none;
+            padding: 17px 50px;
+            position: relative;
+            border-bottom: 1px solid transparent;
+            text-align: left;
+            @media #{$lg}{
+                font-size: 14px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            @media #{$sm}{
+               padding-left: 40px;
+               padding-right: 30px;
+            }
+            &::after{
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                @include transform(translateY(-50%));
+                content: '\f067';
+                font-family: $fontawesome;
+                font-size: 16px;
+                font-weight: 500;
+                color: $black;
+                background: none;
+                width: auto;
+                height: inherit;
+                margin: 0;
+                @media #{$lg}{
+                    left: 6px;
+                }
+                @media #{$sm}{
+                    left: 15px;
+                }
+            }
+            &:focus{
+                @include box-shadow(none);
+            }
+            &:not(.collapsed){
+                background: $white;
+                border-bottom-color: $border-2;
+                &::after{
+                    content: '\f068';
+                    @include transform(translateY(-50%) rotate(0));
+
+                }
+            }
+            &:hover{
+                color: $d-blue;
+            }
+        }
+        & .accordion-body{
+            padding: 15px 20px;
+            padding-right: 25px;
+
+            & p{
+                margin-bottom: 0;
+            }
+        }
+        &-2{
+            .accordion-button{
+                &:hover{
+                    color: $d-yellow-2;
+                }
+            }
+        }
+        &-11{
+            position: relative;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 24px;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background: transparent;
+                z-index: -1;
+                border-left: 2px dashed #D4D4D5;
+
+                @media #{$xs}{
+                    left: 17px;
+                }
+            }
+            & .accordion-item{
+                padding-right: 0;
+                &:not(:last-child){
+                    border: none;
+                }
+            }
+            & .accordion-body{
+                padding-top: 5px;
+                padding-left: 70px;
+            }
+            & .accordion-button{
+                font-size: 20px;
+                font-weight: 500;
+                font-family: $popins;
+                padding: 0;
+                margin-bottom: 20px;
+                border: none;
+                text-align: left;
+                & span{
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 48px;
+                    text-align: center;
+                    border: 1px solid $border-16;
+                    @include border-radius(50%);
+                    font-weight: 700;
+                    font-family: $rubik;
+                    color: $d-yellow-6;
+                    margin-right: 20px;
+                    background: $white;
+                }
+                &::after{
+                    display: none;
+                }
+                &:hover{
+                    color: $d-yellow-6;
+                }
+            }
+        }
+        &-3{
+            & .accordion-button{
+                font-size: 18px;
+                font-weight: 600;
+                color: $black-16;
+                font-family: $popins;
+                @media #{$xs}{
+                    font-size: 16px;
+                }
+                &:hover{
+                    color: $d-orange;
+                }
+            }
+            & .accordion-body{
+                padding-left: 50px;
+            }
+        }
+    }
+    &__wrapper{
+        &-11{
+            padding: 0 60px;
+            padding-top: 45px;
+            @include border-radius(15px 15px 0 0);
+            margin-top: -175px;
+            position: relative;
+            z-index: 1;
+
+            @media #{$xl}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @media #{$lg, $xs}{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,296 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  15. TEAM CSS START
+/*----------------------------------------*/
+
+.team{
+    &__thumb{
+        &-11{
+            @include border-radius(10px);
+        }
+    }
+    &__item{
+        &:hover{
+            & .team__thumb{
+                & img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+        &-4{
+            &:hover{
+                & .team__content-4{
+                    bottom: 0;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+        &-5{
+            &:hover{
+                & .team__content-5{
+                    @include transform(scaleY(1));
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+        &-11{
+            &:hover{
+                & .team__thumb-11 img{
+                    @include transform(scale(1.1));
+                }
+                & .team__line svg{
+                    width: 100%;
+                }
+                & .team__social-11{
+                    opacity: 1;
+                    visibility: visible;
+                }
+                & .team__content-11{
+                    @include transform(translateY(-55px));
+                }
+            }
+        }
+    }
+    &__title{
+        font-size: 22px;
+        font-weight: 600;
+        color: $black-4;
+        margin-bottom: 5px;
+        & a{
+            &:hover{
+                color: $d-orange;
+            }
+        }
+        &-4{
+            font-size: 18px;
+            color: $black-2;
+            margin-bottom: 0;
+            & a{
+                &:hover{
+                    color: $d-red;
+                }
+            }
+        }
+        &-5{
+            font-size: 18px;
+            color: $black-2;
+            margin-bottom: 0;
+            & a{
+                &:hover{
+                    color: $d-red;
+                }
+            }
+        }
+        &-11{
+            font-size: 20px;
+            color: $black-2;
+            margin-bottom: 15px;
+            & a{
+                &:hover{
+                    color: $d-yellow-6;
+                }
+            }
+        }
+    }
+    &__social{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        padding: 15px 30px;
+        @include border-radius(10px);
+        background: $white;
+
+        @media #{$xl}{
+            width: 60%;
+        }
+
+        @media #{$lg}{
+            width: 80%;
+        }
+        @media #{$md}{
+            width: 70%;
+        }
+        @media #{$sm}{
+            width: 70%;
+        }
+        @media #{$xs}{
+            width: 80%;
+        }
+        & ul{
+            & li{
+                display: inline-block;
+                &:not(:last-child){
+                    margin-right: 15px;
+                }
+                & a{
+                    font-size: 16px;
+                    color: $d-text-3;
+                    &:hover{
+                        color: $d-orange;
+                    }
+                }
+            }
+        }
+        &-4{
+            position: relative;
+            & ul{
+                & li{
+                    display: inline-block;
+                    &:not(:last-child){
+                        margin-right: 15px;
+                    }
+                    & a{
+                        font-size: 16px;
+                        color: $d-text-3;
+                        &:hover{
+                            color: $d-red;
+                        }
+                    }
+                }
+            }
+        }
+        &-5{
+            position: relative;
+            & ul{
+                & li{
+                    display: inline-block;
+                    &:not(:last-child){
+                        margin-right: 15px;
+                    }
+                    & a{
+                        font-size: 16px;
+                        color: $d-text-3;
+                        &:hover{
+                            color: $d-orange;
+                        }
+                    }
+                }
+            }
+        }
+        &-11{
+            opacity: 0;
+            visibility: hidden;
+            & ul{
+                & li{
+                    & a{
+                        color: #B9B9B9;
+                        &:hover{
+                            color: $d-yellow-6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__content{
+        padding: 30px 15px;
+        &-4{
+            padding: 20px 50px 15px;
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            @include transform(translateX(-50%));
+            background-color: $white;
+            width: 90%;
+            @include border-radius(5px 5px 0 0);
+            visibility: hidden;
+            opacity: 0;
+
+            @media #{$xl}{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            @media #{$lg}{
+                padding-left: 0;
+                padding-right: 0;
+            }
+            @media #{$sm}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            & > span{
+                color: $d-text-1;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+
+        }
+        &-5{
+            position: absolute;
+            bottom: 8px;
+            left: 20px;
+            right: 20px;
+            padding: 20px 50px 15px;
+            @include border-radius(5px);
+            visibility: hidden;
+            opacity: 0;
+            @include transform(scaleY(0));
+            transform-origin: bottom center;
+
+            @media #{$xl}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            @media #{$lg}{
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            & > span{
+                color: $d-text-1;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+            & .team-5-shape{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+        &-11{
+            position: relative;
+            width: calc(100% - 50px);
+            left: 25px;
+            padding-top: 15px;
+            & span{
+                font-size: 14px;
+                color: $d-text-16;
+                display: inline-block;
+            }
+        }
+    }
+    &__shape{
+        &-1{
+            position: absolute;
+            right: 10%;
+            top: 22%;
+
+            @media #{$xl}{
+                top: 35%;
+            }
+            @media #{$lg}{
+                top: 40%;
+            }
+        }
+    }
+    &__wrapper{
+        &-5{
+            @media #{$md, $sm, $xs}{
+                padding-left: 0;
+            }
+        }
+    }
+    &__line{
+        & svg{
+            width: 0;
+            transition: width .3s ease-in;
+        }
+    }
+}
+

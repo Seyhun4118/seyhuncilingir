@@ -1,0 +1,422 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  21. COURSE CSS START
+/*----------------------------------------*/
+
+.course{
+    &__item{
+        box-shadow: 0px 20px 40px rgba(11, 20, 96, 0.1);
+        @include border-radius(10px);
+        &:hover{
+            & .course__thumb  img{
+                @include transform(scale(1.1));
+            }
+        }
+        &-2{
+            box-shadow: none;
+            @include border-radius(0);
+        }
+    }
+    &__title{
+        font-size: 18px;
+        color: $black-2;
+        font-weight: 600;
+        margin-bottom: 13px;
+        & a{
+            &:hover{
+                color: $d-blue-3;
+            }
+        }
+        &-2{
+            font-size: 17px;
+            & a{
+                &:hover{
+                    color: $d-yellow-4;
+                }
+            }
+        }
+    }
+    &__content{
+        padding: 50px 35px 20px;
+        padding-right: 60px;
+
+        @media #{$xs}{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &-2{
+            padding: 20px 20px;
+            border: 1px solid $border-2;
+            border-top: none;
+
+            @media #{$xl}{
+                padding-right: 35px;
+            }
+        }
+    }
+    &__rating{ 
+        margin-bottom: 5px;
+        & ul{
+            display: inline-block;
+            margin-right: 5px;
+            & li{
+                display: inline-block;
+                & a{
+                    font-size: 14px;
+                    color: $d-yellow;
+                }
+            }
+        }
+    }
+    &__price{
+        & span{
+            font-size: 18px;
+            font-weight: 500;
+            color: $d-blue-3;
+            text-transform: uppercase;
+            &.old-price{
+                font-size: 16px;
+                color: $d-text-1;
+                text-decoration: line-through;
+                font-weight: 400;
+                margin-left: 8px;
+            }
+            &.price-2{
+                color: $black-2;
+            }
+        }
+    }
+    &__action{
+        border-top: 1px solid $border-2;
+        & span{
+            text-align: center;
+            font-size: 14px;
+            color: $d-text-1;
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            width: 100%;
+            border-right: 1px solid $border-2;
+            & i{
+                margin-right: 8px;
+            }
+            &:hover{
+                color: $white;
+                background: $d-blue-3;
+            }
+            &.course-link-btn{
+                border-right: 0;
+                & a{
+                    font-family: $rubik;
+                    color: $d-blue-3;
+                    font-weight: 500;
+                    & i{
+                        margin-right: 0;
+                        top: 49%;
+                    }
+                }
+                &:hover{
+                    & a{
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-2{
+            border-top: none;
+            border-bottom: 1px solid $border-2;
+            border-left: 1px solid $border-2;
+
+            & span{
+                height: 40px;
+                line-height: 40px;
+            }
+        }
+    }
+    &__instructor{
+        position: absolute;
+        top: 0;
+        left: 35px;
+        @include transform(translateY(-50%));
+        & a{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 12px;
+            box-shadow: 0px 5px 10px rgba(12, 53, 123, 0.08);
+            @include border-radius(25px);
+            background: $white;
+            min-width: 130px;
+            & img{
+                width: 30px;
+                height: 30px;
+                @include border-radius(50%);
+                margin-right: 10px;
+            }
+            & span{
+                font-size: 16px;
+                color: $black-2;
+            }
+            &:hover{
+                & span{
+                    color: $d-blue-3;
+                }
+            }
+        }
+    }
+    &__tag{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        & a{
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 16px;
+            color: $white;
+            padding: 0 15px;
+            background: $d-green-4;
+            @include border-radius(5px);
+            &.pink-bg{
+                background: $d-pink;   
+            }
+            &.purple-bg{
+                background: $d-purple-2;   
+            }
+        }
+        &-2{
+            & a{
+                font-size: 14px;
+                display: inline-block;
+            }
+        }
+    }
+    &__tab{
+        & .nav-tabs{
+            border: none;
+            & .nav-item{
+                &:not(:last-child){
+                    margin-right: 20px;
+                }
+                & .nav-link{
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    font-size: 16px;
+                    color: $black-2;
+                    @include border-radius(3px);
+                    padding: 0 20px;
+                    background: $white;
+
+                    @media #{$xs}{
+                        margin-bottom: 15px;
+                    }
+
+                    &.active,
+                    &:hover{
+                        color: $white;
+                        background: $d-blue-3;
+                        box-shadow: 0px 10px 10px rgba(1, 131, 241, 0.15);
+                    }
+                }
+            }
+        }
+        &-2{
+            & .nav-tabs{
+                border-right: 1px solid $border-2;
+                @media #{$md}{
+                    width: fit-content;
+                }
+                @media #{$xs}{
+                    border-right: 0;
+                }
+                & .nav-item{
+                    margin: 0;
+                    &:not(:last-child){
+                        margin: 0;
+                    }
+                    & .nav-link{
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        color: $black-2;
+                        height: 35px;
+                        line-height: 35px;
+                        font-weight: 500;
+                        border: 1px solid $border-2;
+                        border-right: 0;
+                        @include border-radius(0);
+                        & i{
+                            margin-left: 7px;
+                        }
+                        &.active,
+                        &:hover{
+                            color: $black-2;
+                            background: $d-yellow-4;
+                            box-shadow:none;
+                            border-color: $d-yellow-4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__sm{
+        &-item{}
+        &-thumb{}
+        &-title{
+            font-size: 16px;
+            font-weight: 600;
+            color: $white;
+            margin-bottom: 0;
+            & a{
+                &:hover{
+                    color: $d-pink;
+                }
+            }
+            &-2{
+                color: $black-2;
+                & a{
+                    &:hover{
+                        color: $d-yellow-4;
+                    }
+                }
+            }
+        }
+        &-content{}
+        &-meta{
+            & span{
+                font-size: 14px;
+                color: $d-text-13;
+            }
+            &-2{
+                & span{
+                    color: $d-text-1;
+                }
+            }
+        }
+    }
+}
+
+/* instructor css start */
+
+.instructor{
+    &__item{}
+    &__content{
+        padding-top: 25px;
+        & h3{
+            font-size: 20px;
+            font-weight: 600;
+            color: $black-2;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            & a{
+                &:hover{
+                    color: $d-yellow-4;
+                }
+            }
+        }
+        & > span{
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+    }
+    &__rating{
+        margin-bottom: 12px;
+        & ul{
+            & li{
+                display: inline-block;
+                & a{
+                    font-size: 16px;
+                    color: $d-yellow;
+                }
+            }
+        }
+    }
+    &__bottom{
+        border-top: 1px solid $border-2;
+        & span{
+            width: 100%;
+            font-size: 14px;
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            &:not(:last-child){
+                border-right: 1px solid $border-2;
+            }
+        }
+    }
+    &__bg{
+        &-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 44%;
+            height: 100%;
+            z-index: -1;
+
+            @media #{$md, $sm, $xs}{
+                width: 100%;
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba($color: #000000, $alpha: .5);
+            }
+        }
+    }
+    &__wrapper{
+        @media #{$md, $sm, $xs}{
+            margin-bottom: 50px;
+        }
+        & > p{
+            color: $d-text-14;
+            margin-bottom: 40px;
+        }
+    }
+    &__slider{
+        & .owl-nav{
+            & button{
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                left: -20px;
+                font-size: 14px;
+                color: $black-2;
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+                text-align: center;
+                background: $white;
+                @include border-radius(50%);
+
+                @media #{$xs}{
+                    left: 0;
+                }
+                &:hover{
+                    color: $white;
+                    background: $black-2;
+                }
+                &.nav-right{
+                    left: auto;
+                    right: -20px;
+                    @media #{$xs}{
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

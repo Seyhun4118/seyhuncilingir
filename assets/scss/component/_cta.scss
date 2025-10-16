@@ -1,0 +1,355 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  05. CTA CSS START
+/*----------------------------------------*/
+
+.cta{
+    &__area{
+        @include background();
+    }
+    &__title{
+        font-size: 40px;
+        color: $white;
+        line-height: 1.3;
+        margin-bottom: 55px;
+
+        @media #{$md}{
+            font-size: 35px;
+        }
+        @media #{$sm}{
+            font-size: 27px;
+        }
+        @media #{$xs}{
+            font-size: 26px;
+        }
+        &-2{
+            font-size: 29px;
+            color: $white;
+            margin-bottom: 0;
+
+            @media #{$sm}{
+                margin-bottom: 25px;
+            }
+
+            @media #{$xs}{
+                font-size: 23px;
+                margin-bottom: 25px;
+            }
+        }
+        &-4{
+            font-size: 45px;
+            color: $black-2;
+            margin-bottom: 0;
+
+            @media #{$sm}{
+                font-size: 30px;
+            }
+            @media #{$xs}{
+                font-size: 27px;
+            }
+        }
+    }
+    &__btn{
+        & .or{
+            font-size: 14px;
+            font-weight: 700;
+            color: $white;
+            margin: 0 15px;
+
+            @media #{$xs}{
+                display: block;
+                margin: 10px 0;
+            }
+        }
+        & .d-btn{
+            & span{
+                margin-right: 5px;
+            }
+            &.d-btn-border{
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            &:hover{
+                background: $white;
+                color: $black;
+            }
+        }
+        &-3{
+            & .d-btn-border{
+                &:hover{
+                    color: $d-yellow-2;
+                }
+            }
+        }
+    }
+    &__overlay{
+        position: relative;
+        &::after{
+            @extend %theme-after-before;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            @include bg-color($d-blue-dark-2, .7);
+        }
+        &-2{
+            &::after{
+                @include bg-color($black, .5);
+            }
+        }
+        &-5{
+            &::after{
+                @include bg-color($black-6, .2);
+            }
+        }
+        &-11{
+            &::after{
+                background: rgba($color: #25262D, $alpha: .8);
+            }
+        }
+    }
+    &__content{
+        &-2{
+            @media #{$md}{
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            & h5{
+                font-size: 22px;
+                margin-bottom: 5px;
+                color: $white;
+            }
+        }
+        &-4{
+            @media #{$md, $sm, $xs}{
+                margin-bottom: 40px;
+            }
+        }
+        &-7{
+            @media #{$md, $sm, $xs}{
+                margin-bottom: 20px;
+            }
+            & h3{
+                font-size: 30px;
+                color: $white;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+            & p{
+                font-family: $popins;
+                color: $white;
+                margin-bottom: 0;
+                padding-right: 60px;
+                @media #{$xs}{
+                    padding-right: 0;
+                }
+            }
+        }
+        &-8{
+            & h3{
+                color: $black-2;
+            }
+            & p{
+                color: $black-2;
+            }
+        }
+        &-9{
+            & .d-btn-2-white{
+                color: $black;
+                &:hover{
+                    color: $white;
+                }
+            }
+            & .d-btn{
+                @media #{$xs}{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &-11{
+            & .section__title-11{
+                color: $white;
+
+                @media #{$md}{
+                    font-size: 48px;
+                }
+                @media #{$sm}{
+                    font-size: 35px;
+                }
+                & span{
+                    color: $d-yellow-6;
+                }
+            }
+        }
+    }
+    &__thumb{
+        @media #{$xl}{
+            margin-right: 0;
+        }
+        @media #{$lg}{
+            margin-right: 0;
+        }
+        &-10{
+            & img{
+                @media #{$xxl, $xl, $lg, $md, $sm, $xs}{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &__padding{
+        @media #{$sm}{
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        @media #{$xs}{
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+    &__wrapper{
+        &-4{
+            padding: 70px 80px;
+            
+            @media #{$lg}{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            @media #{$sm, $xs}{
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+        &-7{
+            padding: 47px 70px;
+
+            @media #{$sm, $xs}{
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+        }
+        &-10{
+            @media #{$xxl}{
+                padding-bottom: 100px;
+            }
+            @media #{$xs}{
+                margin-bottom: 50px;
+            }
+            @media #{$xl, $lg, $md}{
+                padding-right: 0;
+                padding-bottom: 100px;
+            }
+        }
+    }
+    &__video{
+        & .play-video{
+            display: inline-block;
+            width: 116px;
+            height: 116px;
+            line-height: 116px;
+            text-align: center;
+            font-size: 30px;
+            padding-left: 9px;
+            color: $white;
+            @include border-radius(50%);
+            background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(254,163,7,1) 0%, rgba(254,88,36,1) 100%);
+            &:hover{
+                color: $d-blue-dark-3;
+            }
+        }
+    }
+    &__form{
+        &-input{
+            &-wrapper{
+                & button{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    color: $white;
+                    height: 60px;
+                    line-height: 60px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    background: $black-2;
+                    padding: 0 30px;
+                    font-size: 14px;
+                    & i{
+                        margin-right: 8px;
+                    }
+
+                    @media #{$xs}{
+                        position: static;
+                        margin-top: 30px;
+                    }
+                }
+            }
+            width: 440px;
+            @media #{$xs}{
+                width: 100%;
+            }
+
+            & input{
+                width: 100%;
+                height: 60px;
+                background: $white;
+                border: 0;
+                outline: 0;
+                padding: 0 45px;
+                padding-right: 170px;
+                @media #{$xs}{
+                   padding-right: 20px;
+                }
+                &::placeholder{
+                    color: $d-text-3;
+                    font-size: 16px;
+                }
+            }
+            & .mail-icon{
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                @include transform(translateY(-50%));
+                color: $d-text-3;
+            }
+
+            &-2{
+                width: 100%;
+                & button{
+                    & i{
+                        color: $d-yellow-4;
+                    }
+                }
+            }
+        }
+    }
+    &__support{
+        &-icon{
+            & i{
+                font-size: 50px;
+                color: $white;
+            }
+        }
+        &-content{
+            & p{
+                font-size: 15px;
+                margin-bottom: 0;
+                color: $white;
+            }
+            & h3{
+                font-size: 26px;
+                color: $white;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.cta-orange-color{
+    & .d-btn-bus{
+        background: $d-orange;
+        &:hover{
+            background: $black-2;
+        }
+    }
+}

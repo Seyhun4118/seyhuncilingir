@@ -1,0 +1,207 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  19. CONTACT CSS START
+/*----------------------------------------*/
+
+.contact{
+    &__wrapper{
+        @media #{$lg, $md, $sm, $xs}{
+            padding-left: 0;
+        }
+        @media #{$sm, $xs}{
+            margin-bottom: 50px;
+        }
+    }
+    &__form{
+        &-btn{
+            & button{
+                width: 100%;
+                border-radius: 0;
+            }
+            &-2{
+                & button{
+                    font-size: 14px;
+                    color: $white;
+                    background: $d-orange;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    text-align: center;
+                    height: 70px;
+                    line-height: 70px;
+                    padding: 0 50px;
+                    & i{
+                        font-size: 18px;
+                        margin-left: 5px;
+                    }
+                    &:hover{
+                        color: $white;
+                        background: $black-2;
+                    }
+                }
+            }
+        }
+        & .contact-form-title{
+            font-size: 30px;
+            color: $black-2;
+            margin-bottom: 35px;
+        }
+        &-2{
+            padding: 35px 40px;
+
+            @media #{$xs}{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    }
+    &__input{
+        & input,
+        & textarea,
+        & .nice-select{
+            width: 100%;
+            height: 60px;
+            background: $white;
+            border: none;
+            outline: none;
+            padding: 0 20px;
+            font-size: 14px;
+            line-height: 60px;
+            color: $d-text-1;
+            &::placeholder{
+                color: $d-text-1;
+            }
+            &:focus{
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.06);
+            }
+        }
+        & .nice-select{
+            border-radius: 0;
+            float: none;
+            & .list{
+                margin-top: 0;
+                width: 100%;
+                border-radius: 0;
+                & .option{
+                    &:hover{
+                        background: $grey-4;
+                        color: $black;
+                    }
+                }
+            }
+        }
+        & textarea{
+            padding:20px;
+            height: 120px;
+            line-height: 1.1;
+            resize: none;
+        }
+        &-2{
+            & input,
+            & textarea{
+                background: #F8F9FC;
+
+                &::placeholder{
+                    color: #83868D;
+                }
+            }
+            & .nice-select{
+                background: #F8F9FC;
+
+                &::after{
+                    right: 20px;
+                    width: 0; 
+                    height: 0; 
+                    border: 0;
+                    border-left: 6px solid transparent;
+                    border-right: 6px solid transparent;
+                    border-top: 6px solid #C1C6D6;
+                    @include transform(rotate(0));
+                }
+                &.open{
+                    &::after{
+                        @include transform(rotate(180deg));
+                    }
+                }
+            }
+            & textarea{
+                height: 150px;
+            }
+        }
+    }
+    &__info{
+        padding: 30px 40px 40px;
+
+        @media #{$lg}{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @media #{$md, $sm, $xs}{
+            margin-top: 50px;
+        }
+        @media #{$xs}{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        & h3{
+            font-size: 30px;
+            color: $black-2;
+            margin-bottom: 40px;
+        }
+        & ul{
+            & li{
+                &:not(:last-child){
+                    margin-bottom: 35px;
+                }
+            }
+        }
+        &-text{
+            & p{
+                margin-bottom: 0;
+            }
+            & h5{
+                font-size: 20px;
+                font-weight: 500;
+                color: $black-2;
+            }
+        }
+        &-chat{
+            border-top: 1px solid #EBEDF2;
+            & h4{
+                font-size: 30px;
+                color: $black-2;
+            }
+            & a{
+                color: $d-orange;
+                font-weight: 500;
+                & span{
+                    position: relative;
+                    margin-left: 10px;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: $d-orange;
+                    }
+                }
+            }
+        }
+    }
+    &__map{
+        &-wrapper{
+            width: 100%;
+            height: 775px;
+
+            @media #{$xs}{
+                height: 550px;
+            }
+            & iframe{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

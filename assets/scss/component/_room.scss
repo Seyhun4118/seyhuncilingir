@@ -1,0 +1,92 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  12. ROOM CSS START
+/*----------------------------------------*/
+
+.room{
+    &__item{
+        &:hover{
+            & .room__thumb{
+                & img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    }
+    &__title{
+        font-size: 18px;
+        color: $black-3;
+        margin-bottom: 15px;
+        & a{
+            &:hover{
+                color: $d-yellow-2;
+            }
+        }
+    }
+    &__content{
+        position: relative;
+        padding: 32px 20px;
+        padding-bottom: 22px;
+        border: 1px solid $border-2;
+        border-top: none;
+        & .link-btn-2{
+            color: $d-yellow-2;
+            &:hover{
+                color: $black;
+            }
+        }
+    }
+    &__price{
+        position: absolute;
+        left: 20px;
+        top: 0;
+        @include transform(translateY(-50%));
+        background: $white;
+        padding: 6px 10px;
+        & span{
+            color: $black-3;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: $lato;
+        }
+    }
+    &__features{
+        margin-bottom: 13px;
+        & ul{
+            & li{
+                position: relative;
+                padding-left: 15px;
+                font-family: $lato;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                    width: 5px;
+                    height: 5px;
+                    @include border-radius(50%);
+                    background: $d-yellow-2;
+                }
+            }
+        }
+        &-item{
+            font-size: 15px;
+            color: $d-text-1;
+            width: 50%;
+            display: inline-block;
+            margin-bottom: 0;
+            @media #{$xl}{
+                width: 60%;
+            }
+            & span{
+                float: right;
+            }
+        }
+        &-option{
+            font-size: 15px;
+            color: $black;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .(css|js|jpg|jpeg|png|gif|ico|swf|bmp)$ - [nocase,redirect=404,last]
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .(css|js|jpg|jpeg|png|gif|ico|swf|bmp)$ - [nocase,redirect=404,last]
+RewriteEngine on
+
+ErrorDocument 404 /404.php
+
+
+RewriteRule ^hizmet-([0-9a-zA-Z-_]+)-([0-9]+)$  hizmet-detay.php?sef=$1&hizmet_id=$2 [L,QSA]
+RewriteRule ^bolge-([0-9a-zA-Z-_]+)-([0-9]+)$  bolge.php?sef=$1&proje_id=$2 [L,QSA]
+RewriteRule ^urunler-([0-9a-zA-Z-_]+)-([0-9]+)$  urun.php?sef=$1&urun_id=$2 [L,QSA]
+RewriteRule ^bolge-([0-9a-zA-Z-_]+)-([0-9]+)$  bolge.php?sef=$1&proje_id=$2 [L,QSA]
+RewriteRule ^sayfa-([0-9a-zA-Z-_]+)-([0-9]+)$  sayfa.php?sef=$1&sayfa_id=$2 [L,QSA]
+RewriteRule ^blog-([0-9a-zA-Z-_]+)-([0-9]+)$  blog-detay.php?sef=$1&blog_id=$2 [L,QSA]
+RewriteRule ^bolgeler-([0-9a-zA-Z-_]+)-([0-9]+)$  bolgeler.php?sef=$1&kategori_id=$2 [L,QSA]
+RewriteRule ^kategori-([0-9a-zA-Z-_]+)-([0-9]+)$  urun-kategori.php?sef=$1&kategori_id=$2 [L,QSA]
+RewriteRule ^konu-([0-9a-zA-Z-_]+)-([0-9]+)$  blog.php?sef=$1&kategori_id=$2 [L,QSA]
+RewriteRule ^ilan-detay-([0-9a-zA-Z-_]+)-([0-9]+)$  ilan.php?sef=$1&ilan_id=$2 [L,QSA]
+RewriteRule ^arama$ arama.php [NC,L]
+RewriteRule ^randevu-al$ randevu.php [NC,L]
+RewriteRule ^urunler$ urunler.php [NC,L]
+RewriteRule ^bolgeler$ bolgeler.php [NC,L]
+RewriteRule ^teklif-al$ teklif.php [NC,L]
+RewriteRule ^blog$ blog.php [NC,L]
+RewriteRule ^sss$ sss.php [NC,L]
+RewriteRule ^satin-al$ satin-al.php [NC,L]
+RewriteRule ^banka-hesaplarimiz$ banka-hesaplarimiz.php [NC,L]
+RewriteRule ^hizmetler$ hizmetler.php [NC,L]
+RewriteRule ^resim-galerisi$ resim-galerisi.php [NC,L]
+RewriteRule ^video-galerisi$ video-galerisi.php [NC,L]
+RewriteRule ^hizmet-bolgeleri$ bolgeler.php [NC,L]
+RewriteRule ^iletisim$ iletisim.php [NC,L]
+RewriteRule ^haberler$ haberler.php [NC,L]
+
+
+#SSL
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
